@@ -37,7 +37,7 @@ import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 import sign from './sign.png';
 import Saks from './Saks.JPG';
-import ss from './ss.JPG';
+import ss from './ss.jpg';
 import hotel from './hotel.jpg';
 import spot from './spot.png';
 import linkedin from './linkedin.png';
