@@ -33,7 +33,7 @@ const Contact = ({ isDarkMode }) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className='w-full px-[12%] py-10 scroll-mt-20 bg-[url("/footer-bg-color.png")] bg-no-repeat bg-center bg-[length:90%_auto]'
+      className='w-full px-[12%] py-10 scroll-mt-20  bg-no-repeat bg-center bg-[length:90%_auto]'
     >
       <motion.h4
         initial={{ opacity: 0, y: -20 }}
@@ -63,36 +63,39 @@ const Contact = ({ isDarkMode }) => {
       </motion.p>
 
       <form onSubmit={onSubmit} className='max-w-2xl mx-auto'>
-        <div className='grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10 mb-8'>
-          {["name", "email"].map((field, index) => (
-            <motion.input
-              key={field}
-              type={field === "email" ? "email" : "text"}
-              name={field}
-              placeholder={`Enter your ${field}`}
-              required
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className={`flex-1 p-3 outline-none rounded-md 
-                ${isDarkMode ? 'bg-gray-900 border-white' : 'bg-white border-gray-400'} 
-                border-[0.5px]`}
-            />
-          ))}
-        </div>
+       <div className='grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10 mb-8'>
+  {["name", "email"].map((field, index) => (
+    <motion.input
+      key={field}
+      type={field === "email" ? "email" : "text"}
+      name={field}
+      placeholder={`Enter your ${field}`}
+      required
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.2 }}
+      className={`flex-1 p-3 outline-none rounded-md 
+        ${isDarkMode
+          ? 'bg-gray-900 border-white placeholder-gray-400'
+          : 'bg-white border-gray-400 placeholder-gray-500'} 
+        border-[0.5px]`}
+    />
+  ))}
+</div>
+
 
         <motion.textarea
-          rows="6"
-          name="message"
-          placeholder="Enter your message"
-          required
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className={`w-full p-4 outline-none rounded-md mb-6 
-            ${isDarkMode ? 'bg-gray-900 border-white' : 'bg-white border-gray-400'} 
-            border-[0.5px]`}
-        ></motion.textarea>
+  rows="6"
+  name="message"
+  placeholder="Enter your message"
+  required
+  initial={{ opacity: 0, y: 10 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: 0.4 }}
+  className={`w-full p-4 outline-none rounded-md mb-6 
+    ${isDarkMode ? 'bg-gray-900 border-white placeholder-gray-400' : 'bg-white border-gray-400 placeholder-gray-500'} 
+    border-[0.5px]`}
+></motion.textarea>
 
         <motion.button
           type="submit"

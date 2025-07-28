@@ -12,8 +12,11 @@ const ovo = Ovo({
 });
 
 export const metadata = {
-  title: "Saksham Suryawanshi Portfolio",
-  description: "Created by Saksham",
+  title: 'Saksham Portfolio',
+  description: 'Saksham Suryawanshi’s Portfolio Website',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({ children }) {

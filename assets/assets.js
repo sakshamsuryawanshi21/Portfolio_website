@@ -46,6 +46,8 @@ import tweet from './twwet.png';
 import github from './github.png';
 import icons_logog from './icons_logog.png';
 import instagram_dark  from './instagram_dark.png';
+import wk1 from './wk1.png';
+import w2 from './w2.png';
 
 
 export const assets = {
@@ -89,7 +91,7 @@ export const assets = {
     sign,
     Saks,
     ss,
-    spot,hotel,insta,linkedin,tweet,github,icons_logog,instagram_dark
+    spot,hotel,insta,linkedin,tweet,github,icons_logog,instagram_dark,wk1,w2
 };
 
 export const workData = [
@@ -97,21 +99,25 @@ export const workData = [
     title: 'Spotify Clone',
     description: 'Web Design',
     bgImage: assets.spot,
+        link: 'https://github.com/sakshamsuryawanshi21/spotify-clone',
   },
   {
     title: 'Hotel Mangement',
     description: 'Full Stack',
     bgImage: assets.hotel,
+        link: 'https://github.com/sakshamsuryawanshi21/spotify-clone',
   },
     {
-        title: 'Photography site',
+        title: 'Entrepronewoods',
         description: 'Web Design',
-        bgImage: '/work-3.png',
+        bgImage: assets.wk1,
+        link:'https://apiero-tech.vercel.app/',
     },
     {
         title: 'UI/UX designing',
         description: 'UI/UX Design',
-        bgImage: '/work-4.png',
+        bgImage: assets.w2,
+        link:'https://entrepreneur-woods-wprw-front.vercel.app/',
     },
 ]
 

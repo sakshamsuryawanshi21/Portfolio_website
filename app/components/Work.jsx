@@ -43,39 +43,45 @@ const Work = ({ isDarkMode }) => {
 
       {/* Work Cards */}
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-10'>
-        {workData.map((project, index) => (
-          <motion.div
-            key={index}
-            whileHover={{ scale: 1.02 }}
-            className='group aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer'
-            style={{ backgroundImage: `url(${project.bgImage.src})` }}
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`w-10/12 absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between 
-              rounded-md transition-all duration-500 group-hover:bottom-7 ${
-                isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'
-              }`}
-            >
-              <div>
-                <h2 className='font-semibold'>{project.title}</h2>
-                <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                  {project.description}
-                </p>
-              </div>
-              <div
-                className={`border rounded-full w-9 aspect-square flex items-center justify-center transition group-hover:bg-lime-300 ${
-                  isDarkMode ? 'border-white' : 'border-black'
-                }`}
-              >
-                <Image src={assets.send_icon} alt='send icon' className='w-5' />
-              </div>
-            </motion.div>
-          </motion.div>
-        ))}
-      </div>
+  {workData.map((project, index) => (
+    <motion.div
+      key={index}
+      whileHover={{ scale: 1.02 }}
+      className='group aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer'
+      style={{ backgroundImage: `url(${project.bgImage.src})` }}
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        className={`w-10/12 absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between 
+        rounded-md transition-all duration-500 group-hover:bottom-7 ${
+          isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'
+        }`}
+      >
+        <div>
+          <h2 className='font-semibold'>{project.title}</h2>
+          <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+            {project.description}
+          </p>
+        </div>
+        
+        <a
+          href={project.link}
+          target='_blank'
+          rel='noopener noreferrer'
+          className={`border rounded-full w-9 aspect-square flex items-center justify-center transition group-hover:bg-lime-300 ${
+            isDarkMode ? 'border-white' : 'border-black'
+          }`}
+        >
+          <Image src={assets.send_icon} alt='send icon' className='w-5' />
+        </a>
+        
+      </motion.div>
+    </motion.div>
+  ))}
+</div>
+
     </motion.div>
   )
 }
