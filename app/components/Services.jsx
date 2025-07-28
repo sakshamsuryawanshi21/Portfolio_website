@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import { motion } from 'framer-motion'
 
-const Services = () => {
+const Services = ({isDarkMode}) => {
   return (
     <motion.div
       id='services'
@@ -48,7 +48,7 @@ const Services = () => {
         transition={{ duration: 0.7 }}
         className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-10'
       >
-        {serviceData.map(({ icon, title, description, link }, index) => (
+        {serviceData.map(({ icon, title, description}, index) => (
           <motion.div
             key={index}
             whileHover={{ y: -5 }}
@@ -56,14 +56,9 @@ const Services = () => {
             className='border border-gray-400 rounded-lg px-8 py-12 hover:shadow-md duration-500'
           >
             <Image src={icon} alt='' className='w-10' />
-            <h3 className='text-lg my-4 text-gray-700'>{title}</h3>
-            <p className='text-sm text-gray-600 leading-5'>{description}</p>
-            <a
-              href={link}
-              className='flex items-center gap-2 text-sm mt-5 text-blue-500 hover:underline'
-            >
-              Read More <Image src={assets.right_arrow} alt='' className='w-4' />
-            </a>
+<h3 className={`text-lg my-4 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>{title}</h3>
+            <p className= {`text-lg my-4 ${isDarkMode ? "text-gray-300" : "text-gray-600 text-sm text-gray-600 leading-5"}`}>{description}</p>
+           
           </motion.div>
         ))}
       </motion.div>
